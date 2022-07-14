@@ -1,0 +1,380 @@
+@import "../../App.scss";
+
+/************************/
+
+.header-product {
+  background-color: var(--color-3);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 102px 40px 15px 40px;
+  width: 100%;
+  max-width: 100vw;
+
+  @include breakpoints(sm) {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 95px 13px 15px 13px;
+  }
+
+  h4,
+  h1,
+  svg {
+    color: #fff;
+  }
+
+  svg {
+    font-size: 3.5rem;
+    padding: 0;
+
+    @include breakpoints(sm) {
+      font-size: 2.5rem;
+      // position: absolute;
+      // right: 0;
+    }
+  }
+}
+
+/************************/
+.share-social-media {
+  svg {
+    cursor: pointer;
+    font-size: 1.5rem;
+    @include breakpoints(sm) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.modal-background-sm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #383b58eb;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px)
+}
+
+.modal-container-sm {
+  background-color: #fff;
+  width: 25%;
+  height: 16%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px 15px 15px;
+  margin: 15px;
+
+  @include breakpoints(md) {
+    width: 55%;
+    height: 15%;
+  }
+
+  @include breakpoints(sm) {
+    width: 95%;
+    // height: 20%;
+    height: 15%;;
+  }
+}
+
+
+.modal-header {
+  display: flex;
+  min-height: 25%;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  @include breakpoints(sm) {
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    color: #383b58;
+
+    @include breakpoints(sm) {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  button {
+    // background-color: rgba(214, 212, 212, 0.523);
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: rgb(179, 179, 179);
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+    outline: none;
+    margin-top: -30px;
+    margin-right: 3px;
+
+    @include breakpoints(sm) {
+      font-size: 15px;
+      padding: 4px 2px;
+      background-color: transparent;
+    }
+  }
+}
+
+.body-modal {
+  display: flex;
+  min-height: 50%;
+  justify-content: space-evenly;
+  align-items: center;
+
+  circle{
+    font-size: 24px;
+  }
+  svg {
+    font-size: 24px;
+
+
+    @include breakpoints(sm) {}
+  }
+}
+
+/************************/
+
+.location-product {
+  background-color: var(--color-4);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-2);
+  position: relative;
+  z-index: -1;
+
+  h4 {
+    @include breakpoints(sm) {
+      font-size: 14px;
+    }
+  }
+
+  .location-content {
+    display: flex;
+    width: 50%;
+    align-items: flex-start;
+    position: relative;
+
+    svg {
+      font-size: 1.3rem;
+    }
+
+    :first-child {
+      padding-right: 3px;
+    }
+
+    .distance-text {
+      @include breakpoints(sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+/************************/
+
+.description-product {
+  h1 {
+    padding: 40px 0px;
+
+    @include breakpoints(sm) {
+      padding: 20px 0px;
+    }
+  }
+
+  p {
+    padding: 10px 0px;
+    line-height: 20px;
+  }
+}
+
+/************************/
+
+.characteristics-product {
+  .characteristics-grid-container {
+    display: grid;
+    display: -ms-grid;
+    gap: 40px;
+    grid-template-columns: repeat(4, minmax(20%, 1fr));
+    -ms-grid-columns: repeat(4, minmax(20%, 1fr));
+    font-weight: bold;
+    color: var(--gris-plomo);
+
+    @include breakpoints(md) {
+      grid-template-columns: repeat(2, minmax(50%, 1fr));
+      -ms-grid-columns: repeat(2, minmax(50%, 1fr));
+    }
+
+    @include breakpoints(sm) {
+      grid-template-columns: repeat(2, minmax(45%, 0fr));
+      -ms-grid-columns: repeat(2, minmax(45%, 0fr));
+      gap: 30px;
+    }
+
+    svg,
+    img {
+      color: var(--color-principal);
+      margin-right: 5px;
+    }
+  }
+}
+
+/************************/
+
+.map-product {
+
+  .map-wrap {
+    width: 100%;
+    height: 500px;
+
+    @include breakpoints(md) {
+      height: 300px;
+    }
+
+    @include breakpoints(sm) {
+      height: 330px;
+    }
+  }
+
+  .map-ubication-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .leaflet-pane,
+  .leaflet-bottom {
+    z-index: 0;
+  }
+
+  .leaflet-control {
+    display: none;
+  }
+}
+
+/************************/
+
+.politics-product {
+  .politics-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(25%, 1fr));
+    -ms-grid-columns: repeat(3, minmax(25%, 1fr));
+
+    @include breakpoints(md) {
+      grid-template-columns: repeat(2, minmax(50%, 1fr));
+      -ms-grid-columns: repeat(2, minmax(50%, 1fr));
+    }
+
+    @include breakpoints(sm) {
+      grid-template-columns: repeat(1, minmax(100%, 1fr));
+      -ms-grid-columns: repeat(1, minmax(100%, 1fr));
+    }
+
+    h3 {
+      color: var(--color-3);
+      margin-bottom: 40px;
+
+      @include breakpoints(sm) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .politics-items {
+      margin-right: 70px;
+      margin-bottom: 50px;
+
+      div {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+/************* ESTILOS COMPARTIDOS ***********/
+.map-product,
+.charactetistics-title,
+.politics-title {
+  padding: 20px 0px 40px 0px;
+  gap: 10px;
+
+  h1 {
+    padding-bottom: 20px;
+  }
+}
+
+
+.share-social-media,
+.map-product,
+.location-product,
+.description-product,
+.characteristics-product,
+.politics-product {
+  padding: 15px 40px 9px 40px;
+  width: 100%;
+  max-width: 100vw;
+
+  @include breakpoints(sm) {
+    padding: 15px 13px;
+  }
+}
+
+
+.map-product,
+.header-product,
+.description-product,
+.characteristics-product,
+.politics-product {
+  h1 {
+    @include breakpoints(sm) {
+      font-size: 24px;
+    }
+  }
+}
+
+
+.map-product,
+.description-product,
+.characteristics-product,
+.politics-product {
+  h1 {
+    color: var(--color-2);
+  }
+}
+
+.map-product,
+.characteristics-product,
+.politics-product {
+  hr {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    background-color: var(--color-principal);
+    border: 0.01px solid var(--color-principal);
+  }
+}
+
+.map-product,
+.characteristics-grid-container div,
+.politics-items div,
+.description-product p {
+  font-size: 16px;
+  color: var(--gris-plomo);
+  font-weight: 700;
+
+  @include breakpoints(sm) {
+    font-size: 14px;
+  }
+}

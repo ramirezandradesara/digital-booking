@@ -1,0 +1,258 @@
+@import '../../App.scss';
+
+.signup {
+    padding-top: 92px;
+    background-color: #f4f4f4;
+
+    @include breakpoints(sm) {
+        // padding-top: 86px;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .form-container {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100vw;
+        width: 100%;
+        min-height: calc(100vh - 150px);
+        height: 100%;
+        padding: 32px;
+
+        @include breakpoints(sm) {
+            padding: 25px 0px 20px 0px;
+            height: calc(100vh - 80px);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            height: 100%;
+            padding: 2rem;
+
+            @include breakpoints(md) {
+                padding: 1rem;
+                width: 70%;
+            }
+
+            @include breakpoints(sm) {
+                width: 100%;
+                height: 84%;
+                padding: 0;
+            }
+        }
+
+        h1 {
+            color: var(--color-principal);
+            margin-bottom: 30px;
+
+            @include breakpoints(sm) {
+                font-size: 24px;
+            }
+        }
+
+        label {
+            color: var(--color-2);
+            align-self: flex-start;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 14px;
+
+            @include breakpoints(sm) {
+                width: 85%;
+                display: block;
+                align-self: flex-end;
+                font-size: 12px;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+            width: 100%;
+            display: inline-block;
+
+            @include breakpoints(sm) {
+                width: 85%;
+                align-self: flex-end;
+                font-size: 12px;
+            }
+        }
+
+        input {
+            width: 100%;
+            height: 3rem;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            padding: 1rem; // 0.5
+            margin-top: 0.2rem;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+
+            &:focus,
+            &:active {
+                outline: none;
+                border: 1.5px solid var(--color-principal);
+            }
+
+            @include breakpoints(sm) {
+                height: 40px;
+                width: 82.5%;
+                padding: 0px;
+                margin-bottom: 0px;
+            }
+        }
+
+        .input-half {
+            margin-bottom: 12px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            @include breakpoints(md) {
+                display: inline-block;
+                justify-content: flex-start;
+                margin-bottom: 0px;
+            }
+
+            @include breakpoints(sm) {
+                display: inline-block;
+                justify-content: flex-start;
+                width: 70%;
+                margin-bottom: 0px;
+            }
+
+            div {
+                width: 100%;
+                // @include breakpoints(sm) {
+                //     margin-bottom: 0px;
+                // }
+            }
+
+            input {
+                width: 100%;
+
+                &:focus,
+                &:active {
+                    outline: none;
+                    border: 1.5px solid var(--color-principal);
+                }
+
+                @include breakpoints(md) {
+                    margin-bottom: 7px;
+                }
+
+                @include breakpoints(sm) {
+                    height: 40px;
+                    margin-bottom: 7px;
+                }
+            }
+        }
+
+        button {
+            color: var(--blanco);
+            background-color: var(--color-principal);
+            border: 1px solid var(--color-principal);
+            padding: 10px;
+            font-family: 'Roboto', cursive;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px;
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+
+            &:active {
+                background-color: #16a49b;
+            }
+
+            @include breakpoints(md) {
+                width: 100%;
+            }
+
+            @include breakpoints(sm) {
+                width: 70%;
+            }
+        }
+
+        span {
+            color: var(--color-2);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+
+            @include breakpoints(sm) {
+                width: 70%;
+                font-size: 12px;
+            }
+        }
+
+        /* ERROR AL VALIDAR FORM*/
+     
+        .hasError {
+            border: 1px solid #FF0000;
+            background-color: #FFE1E1;
+
+           
+        }
+
+        .error {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+
+            @include breakpoints(sm) {
+                justify-content: flex-start;
+            }
+
+            small {
+                color: #FF0000;
+                font-size: 12px;
+                font-weight: 700;
+                margin-top: 10px;
+                margin-bottom: 8px;
+
+                @include breakpoints(md) {
+                    margin-top: 5px;
+                }
+
+                @include breakpoints(sm) {
+                    width: 70%;
+                    margin-top: 3px;
+                    padding-left: 0px;
+                }
+            }
+        }
+
+        /* FORM ENVIADO */
+
+        .form-sent {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            @include breakpoints(sm) {
+                justify-content: center
+            }
+
+            small {
+                color: var(--color-principal);
+                font-size: 15px;
+                font-weight: 700;
+                margin-top: 3px;
+                margin-bottom: 15px;
+
+                @include breakpoints(sm) {
+                    width: 70%;
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}

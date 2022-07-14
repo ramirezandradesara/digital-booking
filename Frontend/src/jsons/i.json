@@ -1,0 +1,137 @@
+[
+    {
+    "id": "0",
+    "img": "https://unsplash.com/photos/Yrxr3bsPdS0/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUzNDE2MjY2&force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"https://digitalhouse.com/ar",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+},
+
+{
+    "id": "1",
+    "img": "https://unsplash.com/photos/iMnSqmT2RGE/download?force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"https://digitalhouse.com/ar",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+},
+
+{
+    "id": "2",
+    "img": "https://unsplash.com/photos/g8C20IKquGo/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTF8fGJlZHxlc3wwfDB8fHwxNjUzNDIyOTI4&force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"https://digitalhouse.com/ar",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+},
+
+{
+    "id": "3",
+    "img": "https://unsplash.com/photos/rlwE8f8anOc/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUzNDE3NDYw&force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"https://digitalhouse.com/ar",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+},
+
+{
+    "id": "4",
+    "img": "https://unsplash.com/photos/Yrxr3bsPdS0/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUzNDE2MjY2&force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"https://digitalhouse.com/ar",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+},
+
+{
+    "id": "5",
+    "img": "https://unsplash.com/photos/iMnSqmT2RGE/download?force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"#",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+},
+
+{
+    "id": "6",
+    "img": "https://unsplash.com/photos/g8C20IKquGo/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTF8fGJlZHxlc3wwfDB8fHwxNjUzNDIyOTI4&force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"#",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+},
+
+{
+    "id": "7",
+    "img": "https://unsplash.com/photos/rlwE8f8anOc/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUzNDE3NDYw&force=true&w=640",
+	"iconImg": "🤍",
+	"category": "Hotel",
+	"stars": "★★★★★",	
+	"title": "Hermitage Hotel",
+	"review": "8",
+	"concept": "Muy bueno",
+	"location": "A 940 m del centro",
+	"svg": "#",
+	"map":"https://goo.gl/maps/zb3th1bkiU3NU7418",
+	"urlRoute":"#",
+	"services": "",
+	"description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires."
+}
+]

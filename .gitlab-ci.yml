@@ -1,0 +1,21 @@
+stages:
+  - buildBackend
+  - tests
+build-java-project:
+  stage: buildBackend
+  script:
+    - pwd
+    - cd 'Back end'/digitalbooking/
+    - mvn package
+
+tests:
+  stage: tests
+  script:
+    - cd 'Back end'/digitalbooking
+    - mvn test
+
+#  artifacts:
+#    paths:
+#      - /builds/ctd/proyecto-integrador-0522/0821-c1/grupo-06/
+#    exclude:
+#      - /builds/ctd/proyecto-integrador-0522/0821-c1/grupo-06/.git/

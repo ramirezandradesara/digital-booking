@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "b1534494-5df9-4089-92d5-5bb9bdef255b",
+		"name": "Categorias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16623793"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//verifica que consumio la api correctamente\r",
+							"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//verifica si la respuesta de la api es optima  \r",
+							"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"//como le pusimos dos categorias de prueba para confirmar que si me trajo los datos como son  comparamos con el primer dato que necesitan\r",
+							"pm.test(\"Verificar si el Hotel Holiday Inn tiene el id 1\",function(){\r",
+							"   let jsonData = pm.response.json();\r",
+							"   pm.expect(jsonData[0].titulo).to.eql(\"Hotel Holiday Inn\")\r",
+							"});\r",
+							"pm.test(\"Verificar si el Hotel GHL Capital tiene el id 2\",function(){\r",
+							"   let jsonData = pm.response.json();\r",
+							"   pm.expect(jsonData[1].titulo).to.eql(\"Hotel GHL Capital\")\r",
+							"});\r",
+							"//verificamos si el body es correcto\r",
+							"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"})\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//confirmamos que se consumio correctamente a la api  \r",
+							"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//verifica si la respuesta de la api es optima  \r",
+							"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"//verificamos si el body es correcto\r",
+							"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"titulo\": \"titulo de prueba\",\r\n        \"descripcion\": \"descripcion de prueba\",\r\n        \"urlImagen\": \"url prueba\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//confirmamos que se consumio correctamente a la api  \r",
+							"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//verifica si la respuesta de la api es optima  \r",
+							"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"//respuesta debe tener un body valido\r",
+							"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\":4,\r\n        \"titulo\": \"titulo de prueba\",\r\n        \"descripcion\": \"descripcion de prueba\",\r\n        \"urlImagen\": \"url prueba\"\r\n }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//confirmamos que se consumio correctamente a la api  \r",
+							"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//verifica si la respuesta de la api es optima  \r",
+							"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"//debe fallar ya que no me devuelve ningun json con el body\r",
+							"pm.test(\"validar que no me devuelve un JSON como body \", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,67 @@
+// variables globales
+:root {
+  --color-principal: #1DBEB4;
+  --color-2: #383B58;
+  --color-3: #545776;
+  --color-4: #F3F1ED;
+
+  --gris-plomo: #4F4F50;
+  --gris-suave: #BEBEBE;
+  --blanco: #fff;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Roboto';
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  resize: none;
+  &:focus,
+  &:active {
+    outline: none;
+    border: 1.5px solid var(--color-principal);
+  }
+}
+
+// Media queries
+
+@mixin breakpoints($point) {
+
+  // mobile
+  @if $point==sm {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+  // tablet
+  @if $point==md {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+
+    // desktop
+    @if $point==lg {
+      @media (min-width: 1024px) and (max-width: 1920px) {
+        @content;
+      }
+    }
+  }
+}

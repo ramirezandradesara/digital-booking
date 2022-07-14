@@ -1,0 +1,475 @@
+@import '../../App.scss';
+
+.reservation {
+    // padding-top: 92px;
+
+    // @include breakpoints(sm) {
+    //     padding-top: 80px
+    // }    
+
+    .reservation-container {
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #fff;
+        max-width: 100vw;
+        min-height: calc(100vh - 235px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 32px;
+
+        @include breakpoints(md) {
+            flex-direction: column;
+        }
+
+        @include breakpoints(sm) {
+            flex-direction: column;
+            min-height: calc(100vh - 212px);
+        }
+    }
+
+    .reservation-image-container {
+        height: 400px;
+        width: 400px;
+        margin-top: -100px;
+
+
+        @include breakpoints(md) {
+            height: 300px;
+            width: 300px;
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
+
+        @include breakpoints(sm) {
+            height: 200px;
+            width: 200px;
+            margin-right: 0;
+            margin-bottom: 3px;
+        }
+    }
+
+    .reservation-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../../../public/images/reserva.png');
+    }
+
+    .reservation-text-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            color: var(--color-3);
+            font-size: 32px;
+
+            @include breakpoints(sm) {
+                font-size: 25px;
+            }
+        }
+
+        h3 {
+            color: var(--color-3);
+            margin-bottom: 32px;
+            margin-top: 10px;
+            font-size: 18px;
+
+            @include breakpoints(sm) {
+                font-size: 16px;
+            }
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            font-family: 'Roboto';
+            color: var(--color-principal);
+            font-weight: 600;
+            font-size: 20px;
+
+            @include breakpoints(sm) {
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    .bottom-text-reservation {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+
+        @include breakpoints(sm) {
+            width: 88%;
+        }
+    }
+}
+
+.reservas {
+
+    width: 100%;
+    max-width: 100vw;
+    max-height: 100%;
+    background-color: rgba(243, 241, 237, 0.415);
+    // background-color: hsla(235, 40%, 75%, 0.212);
+    background-color: #f4f4f4;
+    display: inline-block;
+    min-height: calc(100vh - 235px);
+    justify-content: column;
+
+
+    .reservas-container {
+        padding: 30px;
+        width: 100%;
+        min-height: calc(100vh - 235px);
+        max-width: 100vw;
+        max-height: 100%;
+        display: flex;
+        background-color: rgba(243, 241, 237, 0.415);
+        // background-color: rgba(243, 241, 237, 0.415);
+        background-color: #f4f4f4;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoints(md) {
+            min-height: 100%;
+        }
+
+        @include breakpoints(sm) {
+            min-height: 100%;
+            padding: 10px;
+        }
+
+    }
+
+    .reservas-items-container {
+        display: inline-flex;
+        height: 100%;
+        background: #ffffff;
+        border: 1px solid #dfe4ea;
+        // box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        box-shadow: 10px 10px 31px -3px rgba(84, 87, 118, 0.69);
+        -webkit-box-shadow: 10px 10px 31px -3px rgba(84, 87, 118, 0.69);
+        -moz-box-shadow: 10px 10px 31px -3px rgba(84, 87, 118, 0.69);
+        border-radius: 8px;
+        width: 72%;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        margin-bottom: 40px;
+
+        @include breakpoints(md) {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        @include breakpoints(sm) {
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    .reserva-item {
+        width: 75%;
+        // border: 1px solid #dfe4ea;
+        // box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 8px;
+
+        @include breakpoints(md) {
+            width: 100%;
+        }
+
+        @include breakpoints(sm) {
+            width: 100%;
+        }
+    }
+
+    .info-reserva {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include breakpoints(sm) {
+            flex-direction: column;
+        }
+    }
+
+    .text-container-reserva {
+        padding: 30px;
+        width: 60%;
+
+        @include breakpoints(md) {
+            padding: 25px 25px 0px 25px;
+            width: 55%;
+
+        }
+
+        @include breakpoints(sm) {
+            width: 100%;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--color-2);
+            margin-bottom: 7px;
+
+            @include breakpoints(sm) {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+        }
+
+        // h4,
+        // svg {
+        //     font-size: 1rem;
+        //     font-weight: 700;
+        //     color: var(--color-2);
+        //     margin-bottom: 7px;
+
+        //     @include breakpoints(sm) {
+        //         font-size: 14px;
+        //     }
+        // }
+    }
+
+
+    .location-reserva {
+        display: inline-flex;
+        @include breakpoints(sm) {
+            svg{
+                align-self: flex-start;
+                width: 18px;
+                height: auto;
+            }
+            h4{
+                margin-left: 4px;
+            }
+        }
+
+        h4,
+        svg {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-2);
+            margin-bottom: 7px;
+
+            @include breakpoints(sm) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .check-reserva {
+        margin: 20px 0px;
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gris-plomo);
+            margin-bottom: 7px;
+
+            @include breakpoints(sm) {
+                font-size: 14px;
+            }
+        }
+
+        hr {
+            margin: 15px 0px;
+            background-color: var(--color-principal);
+            border: 1px solid var(--color-principal);
+        }
+    }
+
+    .datos-extra-reserva {
+        margin-bottom: 20px;
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #858585;
+            font-style: italic;
+            margin-bottom: 7px;
+
+            @include breakpoints(sm) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .caracteristicas-reserva img {
+        margin-top: 15px;
+        margin-right: 18px;
+        font-size: 25px;
+        background-color: #d5d6d772;
+        border-radius: 10px;
+        padding: 8px;
+    }
+
+
+    .imagen-container-reserva {
+        width: 40%;
+        height: auto;
+
+        @include breakpoints(md) {
+            width: 50%;
+        }
+
+        @include breakpoints(sm) {
+            width: 100%;
+            height: 300px;
+
+        }
+    }
+
+
+    .imagen-reserva {
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        // background-image: url('https://unsplash.com/photos/iMnSqmT2RGE/download?force=true&w=640');
+
+        @include breakpoints(md) {
+            border-radius: 0px 10px 0px 0px;
+        }
+
+        @include breakpoints(sm) {
+            border-radius: 0px 0px 0px 0px;
+        }
+
+        button {
+            position: absolute;
+            bottom: 3%;
+            right: 14%;
+
+            align-self: center;
+            color: var(--blanco);
+            background-color: var(--color-principal);
+            border: 1px solid var(--color-principal);
+            padding: 10px 30px;
+            font-family: 'Roboto', cursive;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+
+            &:active {
+                background-color: #16a49b;
+            }
+
+
+            @include breakpoints(md) {
+                width: 100%;
+            }
+
+            @include breakpoints(sm) {
+                width: 100%;
+            }
+
+
+        }
+    }
+
+    .btn-reserva-container {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+
+        @include breakpoints(md) {
+            flex-direction: row;
+            width: 100%;
+            padding: 15px 0px;
+        }
+
+        @include breakpoints(sm) {
+            width: 90%;
+            padding: 15px 0px;
+        }
+        a{
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            @include breakpoints(sm) {
+                font-size: 14px;
+            }
+        }
+
+        button {
+            color: var(--blanco);
+            background-color: var(--color-principal);
+            border: 1px solid var(--color-principal);
+            padding: 15px 0px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 15px 0px;
+            border-radius: 10px;
+            width: 90%;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+
+
+            &:hover {
+                background-color: #fff;
+                // color: #16a49b;
+                transition: 0.3s;
+
+                a{
+                    color: #16a49b;
+                    font-size: 16px;
+                    font-weight: 600;     
+                }
+            }
+
+
+            @include breakpoints(md) {
+                width: 40%;
+                margin: 20px;
+            }
+
+            @include breakpoints(sm) {
+                width: 100%;
+                margin: 15px 0px;
+                font-size: 14px;
+            }
+
+        }
+
+        .cancelar {
+            color: var(--blanco);
+            background-color: #d32f2f;
+            border: 1px solid #d32f2f;
+            ;
+
+            &:hover {
+                color: #d32f2f;
+            }
+
+        }
+    }
+}

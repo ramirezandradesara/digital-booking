@@ -1,0 +1,1154 @@
+{
+	"info": {
+		"_postman_id": "16a68440-447b-417a-87f5-de96e103c43c",
+		"name": "Sprint3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16623793"
+	},
+	"item": [
+		{
+			"name": "categorias",
+			"item": [
+				{
+					"name": "GetCategorias",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//como le pusimos datos para probar si la bdd funciona comprobamos que los datos son iguales a los esperados \r",
+									"pm.test(\"Verificar si el hoteles cinco estrellas tiene el id 1\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData[0].id).to.eql(1)\r",
+									"   pm.expect(jsonData[0].titulo).to.eql(\"Hotel\");\r",
+									"   pm.expect(jsonData[0].descripcion).to.eql(\"Establecimiento  capaz de alojar con comodidad a huéspedes o viajeros. Lugar perfecto para turistas\")\r",
+									"   pm.expect(jsonData[0].urlImagen).to.eql(\"https://s3-grupo6-c1-0821.s3.eu-north-1.amazonaws.com/imagenes+categorias/Hoteles.jpg\")\r",
+									"});\r",
+									"pm.test(\"Verificar si el hoteles de 3 estrellas tiene el id 3\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData[2].id).to.eql(3)\r",
+									"   pm.expect(jsonData[2].titulo).to.eql(\"Cabaña\");\r",
+									"   pm.expect(jsonData[2].descripcion).to.eql(\"Espacios acogedores en contacto con la naturaleza\")\r",
+									"   pm.expect(jsonData[2].urlImagen).to.eql(\"https://s3-grupo6-c1-0821.s3.eu-north-1.amazonaws.com/imagenes+categorias/Caba%C3%B1as.jpg\")\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCategorias",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"titulo\": \"titulo de prueba\",\r\n        \"descripcion\": \"descripcion de prueba\",\r\n        \"urlImagen\": \"url prueba\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutCategorias",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//respuesta debe tener un body valido\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 8,\r\n        \"titulo\": \"titulo de prueba\",\r\n        \"descripcion\": \"descripcion de prueba editada\",\r\n        \"urlImagen\": \"url prueba\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categorias",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCategorias",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//debe fallar ya que no me devuelve ningun json con el body\r",
+									"pm.test(\"validar que no me devuelve un JSON como body \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categorias/:categoriaId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categorias",
+								":categoriaId"
+							],
+							"variable": [
+								{
+									"key": "categoriaId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "GetProductos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//como le pusimos datos de prueba de la bdd verifica si coinciden con lo que esperamos \r",
+									"pm.test(\"Verificar si producto 1 tiene los datos correspondientes\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData[0].id).to.eql(1)\r",
+									"   pm.expect(jsonData[0].nombre).to.eql(\"Exe International Palace\");\r",
+									"   pm.expect(jsonData[0].titulo).to.eql(\"Esta parte de Roma es su favorita\")\r",
+									"   pm.expect(jsonData[0].descripcion).to.eql(\"Un hermoso edificio del siglo XIX situado frente al Teatro de la Ópera de Roma\")\r",
+									"   pm.expect(jsonData[0].precio).to.eql(649.99)\r",
+									"   pm.expect(jsonData[0].disponible ).to.eql(true)\r",
+									"   pm.expect(jsonData[0].latitud).to.eql(41.90006)\r",
+									"   pm.expect(jsonData[0].longitud).to.eql(12.49229)\r",
+									"});\r",
+									"pm.test(\"Verificar si producto 2 tiene los datos correspondientes\",function(){\r",
+									"    let jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData[1].id).to.eql(2)\r",
+									"   pm.expect(jsonData[1].nombre).to.eql(\"The Westin Palace\");\r",
+									"   pm.expect(jsonData[1].titulo).to.eql(\"Hotel con una hermoza cupula de cristal\")\r",
+									"   pm.expect(jsonData[1].descripcion).to.eql(\"El Westin Palace tiene sus instalaciones a sólo  metros del Museo del Prado y del Reina Sofía\")\r",
+									"   pm.expect(jsonData[1].precio).to.eql(1690.0)\r",
+									"   pm.expect(jsonData[1].disponible ).to.eql(true)\r",
+									"   pm.expect(jsonData[1].latitud).to.eql(45.478593)\r",
+									"   pm.expect(jsonData[1].longitud).to.eql(9.198967)\r",
+									"});\r",
+									"\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductosXId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verificar si el id que le pase en mi path corresponde al del objeto\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   let idproducto=Math.floor(pm.request.url.path[1])\r",
+									"   pm.expect(jsonData.id).to.eql(idproducto)\r",
+									"});\r",
+									"\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/:productoId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								":productoId"
+							],
+							"variable": [
+								{
+									"key": "productoId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductosXUbicacion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//segun nuestros productos de prueba comprueba si su ciudad es la que se indica en el path \r",
+									"pm.test(\"Verificar si el id que le pase en mi path coincide con los productos\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   let idciudad=Math.floor(pm.request.url.path[2])\r",
+									"   pm.expect(jsonData[0].ubicacion.id).to.eql(idciudad)\r",
+									"   pm.expect(jsonData[1].ubicacion.id).to.eql(idciudad)\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/ubicacion/:ubicacionId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"ubicacion",
+								":ubicacionId"
+							],
+							"variable": [
+								{
+									"key": "ubicacionId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductosXCategoria",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//segun nuestros productos de prueba comprueba si su ciudad es la que se indica en el path \r",
+									"pm.test(\"Verificar si el id que le pase en mi path coincide con los productos\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   let idcategoria=Math.floor(pm.request.url.path[2])\r",
+									"   pm.expect(jsonData[0].categoria.id).to.eql(idcategoria)\r",
+									"   pm.expect(jsonData[1].categoria.id).to.eql(idcategoria)\r",
+									"   pm.expect(jsonData[2].categoria.id).to.eql(idcategoria)\r",
+									"   \r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/categoria/:categoriaId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"categoria",
+								":categoriaId"
+							],
+							"variable": [
+								{
+									"key": "categoriaId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductosXUbicacionYFechas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//segun nuestros productos de prueba comprueba si su ubicacion es la que se indica en el path \r",
+									"pm.test(\"Verificar si el id que le pase en mi path coincide con los productos\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   let idUbicacion =Math.floor(pm.request.url.path[2])\r",
+									"   console.log(idUbicacion)\r",
+									" \r",
+									"   pm.expect(jsonData[0].ubicacion.id).to.eql(idUbicacion)\r",
+									"   pm.expect(jsonData[1].ubicacion.id).to.eql(idUbicacion)\r",
+									"});\r",
+									"//segun nuestros productos nuestra fecha inicial no tiene  que coincidir con las fechas que le paso \r",
+									"pm.test(\"verificar que en sus reservas no tiene que ser igual a las fechas que le paso\",function(){\r",
+									"     let jsonData=pm.response.json();\r",
+									"      console.log(path)\r",
+									"    //mi funcion toma los parametros y si estan o por encima del rango o por debajo del rango  o si esta vacio(se pueden hacer reservas) retorna true\r",
+									"        function comparar(num){\r",
+									"           if(jsonData[num].reservas[0].fechaInicio<pm.request.url.path[4]&&jsonData[num].reservas[0].fechaInicio<pm.request.url.path[6]||\r",
+									"           jsonData[num].reservas[0].fechaInicio>pm.request.url.path[4]&&jsonData[num].reservas[0].fechaInicio>pm.request.url.path[6]||\r",
+									"           jsonData[num].reservas[0].fechaFinal<pm.request.url.path[4]&&jsonData[num].reservas[0].fechaFinal<pm.request.url.path[6]||\r",
+									"           jsonData[num].reservas[0].fechaFinal>pm.request.url.path[4]&&jsonData[num].reservas[0].fechaFinal>pm.request.url.path[6]||\r",
+									"           jsonData[num].reservas[0].fechaInicio==null&&jsonData[num].reservas[0].fechaFinal)\r",
+									"           return true;\r",
+									"           else{\r",
+									"               return false;\r",
+									"           }\r",
+									"       }\r",
+									"\r",
+									"     pm.expect(comparar(0)).to.eql(true)\r",
+									"     pm.expect(comparar(1)).to.eql(true)\r",
+									"     \r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/ubicacion/:ubicacionId/fechainicial/:fechaInicial/fechafinal/:fechaFinal",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"ubicacion",
+								":ubicacionId",
+								"fechainicial",
+								":fechaInicial",
+								"fechafinal",
+								":fechaFinal"
+							],
+							"variable": [
+								{
+									"key": "ubicacionId",
+									"value": "2"
+								},
+								{
+									"key": "fechaInicial",
+									"value": "2022-07-05"
+								},
+								{
+									"key": "fechaFinal",
+									"value": "2022-07-19"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostProductos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Prueba \",\r\n    \"titulo\": \"Prueba titulo\",\r\n    \"descripcion\": \"Prueba descripcion\",\r\n    \"precio\": 5.99,\r\n    \"disponible\": true,\r\n    \"latitud\":1.1,\r\n    \"longitud\":2.2,\r\n    \"direccion\":\"direccion de prueba\",\r\n    \"categoria\": {\r\n        \"id\": 1\r\n    },\r\n    \"ubicacion\": {\r\n        \"id\": 1\r\n      \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutProductos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"nombre\": \"Prueba \",\r\n    \"titulo\": \"Prueba titulo\",\r\n    \"descripcion\": \"Prueba descripcion\",\r\n    \"precio\": 5.99,\r\n    \"disponible\": true,\r\n    \"latitud\": 1.1,\r\n    \"longitud\": 2.2,\r\n    \"direccion\":\"direccion de prueba editada\",\r\n    \"caracteristicas\": [],\r\n    \"politicas\": [],\r\n    \"categoria\": {\r\n        \"id\": 1,\r\n        \"titulo\": \"Hoteles cinco estrellas\",\r\n        \"descripcion\": \"Hoteles de primera calidad, todas las comodidades\",\r\n        \"urlImagen\": \"tinyurl.com/1\"\r\n    },\r\n    \"ubicacion\": {\r\n        \"id\": 1,\r\n        \"ciudad\": \"Cordoba\",\r\n        \"pais\": \"Argentina\",\r\n        \"continente\": \"America\"\r\n    },\r\n    \"imagenes\": [\r\n        {\r\n            \"id\": 1,\r\n            \"titulo\": \"Frente\",\r\n            \"urlImg\": \"tinyurl.1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProductos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//debe fallar ya que no me devuelve ningun json con el body\r",
+									"pm.test(\"validar que no me devuelve un JSON como body \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/:productoId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								":productoId"
+							],
+							"variable": [
+								{
+									"key": "productoId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "GetReservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente cuando tiene su token \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//cuando no tiene token deberia pasar\r",
+									"pm.test(\"Me devuelve un codigo 500 si el token expiro\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//como le pusimos datos de prueba de la bdd verifica si coinciden con lo que esperamos \r",
+									"pm.test(\"Verificar si producto 1 tiene los datos correspondientes\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData[0].id).to.eql(16)\r",
+									"   pm.expect(jsonData[0].hora).to.eql(\"10:00:00\");\r",
+									"   pm.expect(jsonData[0].fechaInicio).to.eql(\"2022-06-01\")\r",
+									"   pm.expect(jsonData[0].fechaFinal).to.eql(\"2022-06-15\")\r",
+									"   pm.expect(jsonData[0].producto.id).to.eql(1)\r",
+									"   pm.expect(jsonData[0].datosExtra ).to.eql(\"No tengo covid\")\r",
+									"   pm.expect(jsonData[0].vacunado).to.eql(true)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4QG1haWwuY29tIiwiYXBlbGxpZG8iOiJ0dXJuZXIiLCJleHAiOjE2NTU5OTk0OTUsIm5vbWJyZSI6ImFsZXgiLCJpYXQiOjE2NTU5OTU4OTV9.j4SEOgyPwUJ09zDMuWUiDw4hPI6VGOjELBgSWPrC-UY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReservasXProductoId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//segun nuestros productos de prueba comprueba si su producto es la que se indica en el path \r",
+									"pm.test(\"Verificar si el id que le pase en mi path coincide con los productos\",function(){\r",
+									"   let jsonData = pm.response.json();\r",
+									"   let idproducto=Math.floor(pm.request.url.path[2])\r",
+									"   pm.expect(jsonData[0].producto.id).to.eql(idproducto)\r",
+									"  \r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe devolver un body  valido\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/producto/:productoId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								"producto",
+								":productoId"
+							],
+							"variable": [
+								{
+									"key": "productoId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostReservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//si no tiene el rol para acceder me tirara un 403\r",
+									"pm.test(\"Si no estoy registrado con mi token arrojara 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4QG1haWwuY29tIiwiYXBlbGxpZG8iOiJ0dXJuZXIiLCJleHAiOjE2NTU5OTk0OTUsIm5vbWJyZSI6ImFsZXgiLCJpYXQiOjE2NTU5OTU4OTV9.j4SEOgyPwUJ09zDMuWUiDw4hPI6VGOjELBgSWPrC-UY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hora\":\"10:00:00\",\r\n    \"fechaInicio\": \"2022-12-23\",\r\n    \"fechaFinal\": \"2023-01-03\",\r\n        \"producto\": {\r\n            \"id\": 2\r\n        },\r\n        \"usuario\": {\r\n            \"id\": 5\r\n        },\r\n        \"datosExtra\": \":3\",\r\n        \"vacunado\": true\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutReservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//si no tiene el rol para acceder me tirara un 403\r",
+									"pm.test(\"Si no estoy registrado con mi token arrojara 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4QG1haWwuY29tIiwiYXBlbGxpZG8iOiJ0dXJuZXIiLCJleHAiOjE2NTU5OTk0OTUsIm5vbWJyZSI6ImFsZXgiLCJpYXQiOjE2NTU5OTU4OTV9.j4SEOgyPwUJ09zDMuWUiDw4hPI6VGOjELBgSWPrC-UY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 32,\r\n    \"hora\": \"10:00:00\",\r\n    \"fechaInicio\": \"2022-12-23\",\r\n    \"fechaFinal\": \"2023-01-02\",\r\n    \"producto\": {\r\n        \"id\": 2\r\n    },\r\n    \"usuario\": {\r\n        \"id\": 5\r\n    },\r\n    \"datosExtra\": \":3\",\r\n    \"vacunado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteReservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//confirmamos que se consumio correctamente a la api  \r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//debe fallar ya que no me devuelve ningun json con el body\r",
+									"pm.test(\"validar que no me devuelve un JSON como body \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/:reservaId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								":reservaId"
+							],
+							"variable": [
+								{
+									"key": "reservaId",
+									"value": "31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login/register",
+			"item": [
+				{
+					"name": "PostUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"miguel\",\r\n    \"apellido\":\"moreno\",\r\n    \"email\":\":uwu@gmail.com\",\r\n    \"contraseña\":\"miguelito\",\r\n    \"ciudad\":\"bogota\",\r\n    \"rol\":{\r\n        \"id\":2\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//verifica que consumio la api correctamente\r",
+									"pm.test(\"Me devuelve un codigo 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"//verifica si la respuesta de la api es optima  \r",
+									"pm.test(\"La respuesta se demora menos de 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"//verifica que el jwt es un string \r",
+									"pm.test(\"el token tiene que ser un string \",function(){\r",
+									"    let responseJson =pm.response.json();\r",
+									"    pm.expect(responseJson.jwt).to.be.a('string')\r",
+									"});\r",
+									"\r",
+									"//verificamos si el body es correcto\r",
+									"pm.test(\"la respuesta debe tener un body valido \", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"alex@mail.com\",\r\n    \"password\": \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

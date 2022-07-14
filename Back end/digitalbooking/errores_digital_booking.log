@@ -1,0 +1,13 @@
+
+[2022-06-3010:02:14] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada
+[2022-06-3010:26:50] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada
+[2022-07-0108:58:12] [ ERROR] [GlobalExceptions:19] El email : background-size: cover; no es valido
+[2022-07-0109:17:48] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada
+[2022-07-0110:32:33] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada
+[2022-07-0416:58:19] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada
+[2022-07-0515:37:28] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada
+[2022-07-0616:58:32] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada
+[2022-07-0621:17:54] [ ERROR] [GlobalExceptions:19] No se pudo actualizar la Reserva con id 73con hora : 10:00:01 con fecha de inicio : 2022-12-23y fecha final : 2023-01-03por que no se encontraron los datos necesarios para realizar la peticion. 
+[2022-07-0621:41:56] [ ERROR] [GlobalExceptions:19] No se pudo actualizar la imagen con id : 168 con titulo : pruebaEditada con url : prueba ya que no se encuentran los elementos necesarios para realizar la peticion. 
+[2022-07-0621:42:22] [ ERROR] [GlobalExceptions:14] No existe la imagen con id : 168 no se puede borrar
+[2022-07-0710:02:35] [ ERROR] [GlobalExceptions:19] Este email ya esta asociada con una cuenta creada

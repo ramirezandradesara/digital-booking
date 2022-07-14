@@ -1,0 +1,892 @@
+@import "../../App.scss";
+
+.form,
+.booking-date,
+.check-in,
+.booking-details {
+  h1 {
+    color: var(--color-2);
+
+    @include breakpoints(sm) {
+      font-size: 20px;
+    }
+  }
+}
+
+// "Completá tus datos"
+.title-form {
+  background-color: rgba(243, 241, 237, 0.415);
+  padding: 40px 0px 16px 40px;
+  color: var(--color-2);
+
+  @include breakpoints(sm) {
+    font-size: 20px;
+    padding: 30px 13px 0px 13px;
+  }
+}
+
+.booking-information {
+  padding: 0px 40px 40px 40px;
+  width: 100%;
+  max-width: 100vw;
+  max-height: 100%;
+  background-color: rgba(243, 241, 237, 0.415);
+  display: flex;
+  justify-content: space-between;
+
+  .error-input {
+    color: #FF0000;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 3px;
+    margin-bottom: 8px;
+  }
+
+  @include breakpoints(md) {
+    flex-direction: column;
+  }
+
+  @include breakpoints(sm) {
+    flex-direction: column;
+    padding: 16px 13px 40px 13px;
+  }
+}
+
+/************ FORMULARIO DE RESERVA ************/
+.form {
+  width: 72%;
+
+  padding-right: 40px;
+
+  h1 {
+    padding-bottom: 1rem;
+  }
+
+  @include breakpoints(md) {
+    width: 100%;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  @include breakpoints(sm) {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    padding-right: 0;
+  }
+
+  /* BLOQUE DE INPUTS  */
+  .form-inputs {
+    @include breakpoints(sm) {
+      flex-direction: column;
+    }
+
+    .card-booking {
+      display: flex;
+      padding: 20px 13px;
+
+      @include breakpoints(sm) {
+        flex-direction: column;
+        padding: 0px;
+      }
+    }
+
+    .inputs-div {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 0px 15px;
+
+      @include breakpoints(sm) {
+        width: 100%;
+        // padding: 0px 15px 0px 15px;
+      }
+
+      label {
+        font-size: 14px;
+        color: var(--color-2);
+        font-style: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        align-self: flex-start;
+        font-weight: 700;
+        line-height: 14px;
+      }
+
+      input {
+        width: 100%;
+        height: 3rem;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+
+        &:focus,
+        &:active {
+          outline: none;
+          border: 1.5px solid var(--color-principal);
+        }
+      }
+    }
+  }
+
+  /* BLOQUE CALENDARIO */
+
+  .booking-date {
+    width: 100%;
+
+    .card-booking {
+      display: flex;
+      // flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-width: 100%;
+      padding: 15px;
+
+      .react-datepicker__month-container {
+        float: left;
+        margin-right: 2rem;
+        margin-left: 2rem;
+
+        @media screen and (max-width: 726px) {
+          margin-right: 1.6rem;
+          margin-left: 1.6rem;
+        }
+
+        @media screen and (max-width: 696px) {
+          margin-right: 1rem;
+          margin-left: 1rem;
+        }
+
+        @include breakpoints(sm) {
+          margin-right: 0;
+          margin-left: 0;
+        }
+      }
+
+      .wrapper-calendar {
+        display: flex;
+        padding-inline: 50%;
+        margin-top: 30px;
+        flex-direction: row;
+        background-color: #edf0f3;
+        flex-direction: column;
+      }
+
+      .wrapper-calendar-title {
+        padding: 20px 0px 0px 0px;
+        gap: 10px;
+      }
+
+      .react-datepicker__header {
+        text-transform: capitalize;
+        background-color: unset;
+        border-color: #1dbeb4;
+        padding: 15px 0;
+      }
+
+      .react-datepicker {
+        border: unset;
+        display: inline-flex;
+        justify-content: center;
+
+        min-height: 100%;
+        align-items: baseline;
+        padding-top: 15px;
+
+        width: 100%;
+        left: 0px;
+        box-shadow: 0px 3px 3px #fff;
+
+        @media screen and (max-width: 1420px) {}
+      }
+
+      .react-datepicker__current-month,
+      .react-datepicker-time__header,
+      .react-datepicker-year-header {
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #000;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .react-datepicker__day-names {
+        margin-bottom: -20px;
+      }
+
+      .react-datepicker__day-name,
+      .react-datepicker__day,
+      .react-datepicker__time-name {
+        width: 3rem;
+
+        @media screen and (max-width: 1420px) {
+          width: 2.5rem;
+        }
+
+        @media screen and (max-width: 1260px) {
+          width: 2.2rem;
+        }
+
+        @media screen and (max-width: 1160px) {
+          width: 2rem;
+        }
+
+        @media screen and (max-width: 1100px) {
+          width: 1.75rem;
+        }
+
+        @media screen and (max-width: 662px) {
+          width: 1.5rem;
+        }
+
+        @media screen and (max-width: 608px) {
+          width: 1.3rem;
+        }
+
+        @media screen and (max-width: 608px) {
+          width: 1.1rem;
+        }
+
+        @include breakpoints(md) {
+          width: 1.8rem;
+        }
+
+        @include breakpoints(sm) {
+          width: 40px;
+        }
+      }
+
+      // .react-datepicker__day:hover {
+      //     background-color: #1dbeb32a;
+      // }
+
+      // .react-datepicker__day-name,
+      // .react-datepicker__day,
+      // .react-datepicker__time-name :hover {}
+
+      // .react-datepicker__navigation {
+      //     border: unset;
+      //     border-radius: 100px;
+      //     color: white;
+      //     height: 35px;
+      //     width: 35px;
+      //     margin-top: 125px;
+      //     background-color: #1dbeb4;
+      // }
+
+      // .react-datepicker__year-read-view--down-arrow,
+      // .react-datepicker__month-read-view--down-arrow,
+      // .react-datepicker__month-year-read-view--down-arrow,
+      // .react-datepicker__navigation-icon::before {
+      //     border-color: unset !important;
+
+      // }
+
+      // .react-datepicker-wrapper-prod {
+      //     display: flex;
+      //     align-items: center;
+      //     justify-content: center;
+      //     margin-bottom: 30px;
+      // }
+
+      // .react-datepicker__day--in-range {
+      //     background-color: #1dbeb4;
+
+      // }
+
+      // .react-datepicker__day--in-range:hover {
+      //     background-color: #1dbeb3a6;
+
+      // }
+
+      // .react-datepicker__day--keyboard-selected {
+      //     background-color: #1dbeb4;
+      // }
+
+      // .react-datepicker__day--keyboard-selected:hover {
+      //     background-color: #1dbeb4;
+      // }
+
+      // .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
+      //     background-color: #1dbeb3a6;
+      // }
+
+      // .react-datepicker__day--selected {
+      //     background-color: #1dbeb4
+      // }
+
+      // .react-datepicker__day--selected:hover {
+      //     background-color: #1dbeb4
+      // }
+
+      // .react-datepicker-wrapper__picker {
+      //     width: 65%;
+      //     display: contents;
+      // }
+
+      // .react-datepicker-card {
+      //     width: 35%;
+      //     display: flex;
+      //     flex-direction: column;
+
+      //     align-items: center;
+      // }
+
+      .react-datepicker-card__body {
+        width: 80%;
+        height: 180px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 10px;
+        // box-shadow: 0px 3px 3px #74757e6b;
+      }
+
+      .react-datepicker-card__body h4 {
+        margin: auto;
+        margin-inline: 20px;
+      }
+
+      .wrapper-calendar-button {
+        width: 90%;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  /* BLOQUE HORARIO DE LLEGADA */
+  .check-in {
+    @include breakpoints(md) {
+      margin-bottom: 2rem;
+    }
+
+    @include breakpoints(sm) {
+      margin-bottom: 2rem;
+    }
+
+    .card-booking {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      // padding: 15px;
+      padding: 25px;
+
+      .title-check-in {
+        font-size: 16px;
+
+        @include breakpoints(sm) {
+          font-size: 14px;
+        }
+      }
+
+      .subtitle-check-in {
+        font-size: 14px;
+      }
+
+      .css-b62m3t-container {
+        margin-bottom: 15px;
+      }
+
+      .title-check-in,
+      .subtitle-check-in {
+        display: flex;
+        align-items: center;
+        color: var(--color-2);
+        margin-bottom: 18px;
+        font-weight: 700;
+
+        svg {
+          font-size: 1.5rem;
+          margin-right: 8px;
+          color: var(--color-2);
+
+          @include breakpoints(sm) {
+            font-size: 2.7rem;
+          }
+        }
+      }
+
+      .css-qc6sy-singleValue {
+        color: #383b58;
+        font-weight: 700;
+
+        @include breakpoints(sm) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  /* TODOS LOS BLOQUES DE FORMULARIO */
+  .form-inputs,
+  .booking-date {
+    margin-bottom: 2rem;
+  }
+}
+
+/*********** DETALLE DE LA RESERVA *************/
+
+.booking-details {
+  width: 28%;
+
+  @include breakpoints(md) {
+    width: 100%;
+  }
+
+  @include breakpoints(sm) {
+    width: 100%;
+  }
+
+  .card-booking {
+    min-height: 100%;
+
+    @include breakpoints(sm) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include breakpoints(md) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-booking-details {
+      @include breakpoints(md) {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 25px 25px 25px;
+      }
+
+      .image-container {
+        // width: 481px;
+        height: 300px;
+        // margin-bottom: 30px;
+
+        @include breakpoints(md) {
+          width: 50%;
+          height: auto;
+          margin-bottom: 0px;
+        }
+
+        @include breakpoints(sm) {
+          min-width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .image {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+
+          @include breakpoints(md) {
+            border-radius: 10px;
+          }
+
+          @include breakpoints(sm) {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .bottom-booking-details {
+      h4 {
+        color: var(--gris-plomo);
+      }
+
+      @include breakpoints(md) {
+        width: 50%;
+        padding: 0px 0px 0px 20px;
+      }
+
+      .location-booking-details {
+        display: inline-flex;
+        align-items: center;
+        padding: 18px 0px 0px;
+
+        @include breakpoints(md) {
+          padding: 18px 0px 15px;
+        }
+
+        @include breakpoints(sm) {
+          padding: 18px 0px 20px;
+        }
+
+        h4,
+        svg {
+          color: var(--color-2);
+        }
+
+      
+      }
+
+      .check-in-booking-details {
+        margin-top: 25px;
+
+        @include breakpoints(md) {
+          margin-top: 0px;
+        }
+
+        @include breakpoints(sm) {
+          margin-top: 0px;
+        }
+
+        h4 {
+          // padding: 20px 0px 20px;
+          padding: 23px 0px;
+
+          @include breakpoints(md) {
+            padding: 20px 0px;
+          }
+
+          @include breakpoints(sm) {
+            padding: 25px 0px;
+          }
+        }
+
+        .check-in-check-out {
+          width: 100%;
+          display: inline-flex;
+          justify-content: space-between;
+        }
+
+        .textarea-booking {
+          textarea {
+            margin-top: 25px;
+            width: 100%;
+            padding: 10px;
+            height: 6rem;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            margin-bottom: 1rem;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+            // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+
+            &:focus,
+            &:active {
+              outline: none;
+              border: 1.5px solid var(--color-principal);
+            }
+
+            @include breakpoints(md) {
+              height: 5rem;
+            }
+          }
+        }
+
+        .checkbox-booking {
+          .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            // margin-bottom: 50px;
+            // margin-bottom: 25px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-weight: 700;
+            color: var(--color-3);
+
+            @include breakpoints(md) {
+              margin-bottom: 15px;
+            }
+
+            @include breakpoints(sm) {
+              margin-bottom: 0px;
+            }
+          }
+
+          .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+          }
+
+          .checkmark {
+            position: absolute;
+            // top: -5px;
+            // left: 0;
+            // height: 25px;
+            // width: 25px;
+            top: -3px;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            background-color: #eee;
+            border: 1px solid rgb(197, 195, 195);
+          }
+
+          .container:hover input~.checkmark {
+            background-color: #ccc;
+          }
+
+          /* When the checkbox is checked, add a blue background */
+          .container input:checked~.checkmark {
+            background-color: var(--color-principal);
+          }
+
+          /* Create the checkmark/indicator (hidden when not checked) */
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+
+          /* Show the checkmark when checked */
+          .container input:checked~.checkmark:after {
+            display: block;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+          }
+
+          /* Style the checkmark/indicator */
+          .container .checkmark:after {
+            // left: 8px;
+            // top: 2px;
+            left: 6px;
+            top: 3px;
+            width: 5px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+
+
+        }
+      }
+
+      .hr-booking {
+        border: 1px solid #bebebe;
+      }
+
+      button {
+        margin-top: 27px;
+        color: var(--blanco);
+        background-color: var(--color-principal);
+        border: 1px solid var(--color-principal);
+        padding: 15px;
+        // margin-top: 75px;
+        font-family: "Roboto", cursive;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+
+        @include breakpoints(md) {
+          margin-top: 25px;
+        }
+
+        @include breakpoints(sm) {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  .bottom-booking-details,
+  .title-booking-details {
+    padding: 24px;
+
+    @include breakpoints(sm) {
+      padding: 16px;
+    }
+  }
+}
+
+/************SUCCESS*************/
+.booking-alternative {
+  height: 100vh;
+  text-align: center;
+}
+
+.booking-success-container {
+  width: 100%;
+  padding: 40px;
+  background-color: var(--color-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @include breakpoints(sm) {
+    padding: 10px;
+  }
+}
+
+.booking-success-card {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  padding: 2em;
+  max-height: 350px;
+  max-width: 750px;
+
+  @include breakpoints(md) {
+    width: 90%;
+  }
+
+  @include breakpoints(sm) {
+    min-width: 350px;
+    padding: 1em;
+  }
+
+  img {
+    width: 128px;
+
+    @include breakpoints(sm) {
+      width: 96px;
+    }
+  }
+
+  h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--color-principal);
+  }
+
+  h3 {
+    color: var(--color-2);
+  }
+
+  a {
+    background-color: var(--color-principal);
+    border-color: transparent;
+    width: 40%;
+    margin-top: 1em;
+    border-radius: 0.5em;
+    height: 3.2em;
+    font-size: inherit;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    @include breakpoints(sm) {
+      width: 80%;
+    }
+
+    a {
+      color: white;
+      font-size: large;
+      font-weight: bold;
+    }
+  }
+}
+
+/************ SOMBREADO ************/
+
+.card-booking {
+  background: #ffffff;
+  border: 1px solid #dfe4ea;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  // padding: 24px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .booking-information {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 100%;
+    padding-right: unset;
+  }
+
+  .booking-details {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .booking-details .bottom-booking-details,
+  .booking-details .title-booking-details {
+    padding: 14px;
+    width: 45%;
+  }
+
+  .booking-details .card-booking {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .booking-details .card-booking .bottom-booking-details .location-booking-details {
+    padding: 18px 0px 20px;
+
+    @include breakpoints(md) {
+      padding: 10px 0px 10px;
+    }
+  }
+
+  .booking-details .card-booking .bottom-booking-details .check-in-booking-details {
+    margin-top: 10px;
+  }
+
+  .booking-details .card-booking .content-booking-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px 10px 15px;
+
+    @include breakpoints(md) {
+      padding: 0px 15px 18px 15px;
+    }
+  }
+
+  .booking-details .card-booking .content-booking-details .image-container {
+    height: unset;
+    margin-bottom: 15px;
+    width: 55%;
+
+    @include breakpoints(md) {
+      margin-bottom: 0px;
+    }
+  }
+
+  .booking-details .card-booking .bottom-booking-details .check-in-booking-details h4 {
+    padding: 25px 0px;
+
+    @include breakpoints(md) {
+      padding: 20px 0px;
+    }
+  }
+
+  .booking-details .card-booking .bottom-booking-details button {
+    margin-top: 15px;
+  }
+
+  .booking-details .card-booking .content-booking-details .image-container .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+  }
+}
