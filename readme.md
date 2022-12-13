@@ -1,4 +1,4 @@
-¡Resultado final del proyecto Digital Booking! 👉 https://pi-digital-booking-fe.herokuapp.com/ 👈
 
-Documentación APIs 👉 https://pi-digital-booking.herokuapp.com/swagger-ui/index.html 👈
-https://user-images.githubusercontent.com/86701343/207189253-2adb52db-cc1b-4ab2-91c1-d34d0a9b3210.mp4
+## Video demo de la aplicación 👉 https://user-images.githubusercontent.com/86701343/207190125-45456e56-6caf-4594-b4e5-39e2070ef83e.mp4 👈
+
+
